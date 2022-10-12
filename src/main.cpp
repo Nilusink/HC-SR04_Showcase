@@ -1,5 +1,3 @@
-#include <Arduino.h>
-
 #define VCC 4
 #define trig 5
 #define echo 6
@@ -19,10 +17,6 @@ void setup() {
 
 
 void loop() {
-  // Clears the trigPin condition
-  digitalWrite(trig, LOW);
-  delayMicroseconds(2);
-
   // Sets the trigPin HIGH (ACTIVE) for 10 microseconds
   digitalWrite(trig, HIGH);
   delayMicroseconds(10);

@@ -10,7 +10,7 @@ import serial
 import time
 
 
-MAX_EXPECTED_DISTANCE: float = 300  # in meters
+MAX_EXPECTED_DISTANCE: float = 120  # in meters
 DISTANCE_STORAGE_LENGTH: int = 10  # in seconds
 PULSE_RESOLUTION: int = 1000  # just for visuals
 
@@ -107,9 +107,7 @@ def main():
         lines.set_ydata(distances)
         dist.relim()
         dist.autoscale_view()
-        # m_d = max(list(filter(lambda e: e is not np.inf, all_distances)))
-        m_d = 150
-        dist.set_ylim(0, m_d if m_d else 1)
+        dist.set_ylim(0, MAX_EXPECTED_DISTANCE)
 
         # pulse plot
         w_lines.set_xdata(p_xs)
