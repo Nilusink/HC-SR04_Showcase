@@ -36,4 +36,5 @@ void loop() {
 
   // Displays the distance on the Serial Monitor
   Serial.print(duration); Serial.print("\t"); Serial.println(distance);
+  delay(20);
 }

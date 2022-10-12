@@ -10,10 +10,11 @@ import serial
 import time
 
 
-MAX_EXPECTED_DISTANCE: float = 300
+MAX_EXPECTED_DISTANCE: float = 300  # in meters
 DISTANCE_STORAGE_LENGTH: int = 10  # in seconds
+PULSE_RESOLUTION: int = 1000  # just for visuals
+
 MAX_PULSE_LENGTH: float = (2 * MAX_EXPECTED_DISTANCE) / 0.034
-PULSE_RESOLUTION: int = 1000
 
 
 def main():
@@ -122,7 +123,7 @@ def main():
 
     # configure graph
     dist.set_title("Distanz")
-    dist.set_ylabel("Distance in cm")
+    dist.set_ylabel("Distanz in cm")
     dist.set_xlabel("t in s")
     dist.grid()
     lines, = dist.plot([], [])
